@@ -29,12 +29,12 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
---folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldcolumn = '5'
+
 
 vim.g.mapleader = " "
 
 -- colorscheme setting
-vim.cmd [[colorscheme monokai]]
+vim.cmd [[colorscheme gruvbox]]
+-- vim.cmd [[highlight FoldColumn guibg=monokai]]
 
