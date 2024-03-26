@@ -13,16 +13,16 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use {
-       "nvim-neorg/neorg",
-       run = ":Neorg sync-parsers", -- This is the important bit!
-       config = function()
-           require("neorg").setup {
---               load = {
---                   ["core-defaults"] = {}
---               }
-           }
-       end,
-   }
+        "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers", -- This is the important bit!
+        config = function()
+            require("neorg").setup {
+                --               load = {
+                --                   ["core-defaults"] = {}
+                --               }
+            }
+        end,
+    }
 
     use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
     use('theprimeagen/harpoon')
@@ -60,4 +60,5 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
+    use {'numToStr/Comment.nvim'}
 end)
