@@ -35,6 +35,8 @@ vim.opt.foldcolumn = '1'
 vim.g.mapleader = " "
 
 -- colorscheme setting
+require('gruvbox').setup({
+    contrast = 'hard',
+})
 vim.cmd [[colorscheme gruvbox]]
 -- vim.cmd [[highlight FoldColumn guibg=monokai]]
-

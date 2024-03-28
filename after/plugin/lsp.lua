@@ -28,6 +28,16 @@ require('lspconfig').volar.setup({
   }
 })
 
+-- require'lspconfig'.rust_analyzer.setup{
+--   settings = {
+--     ['rust-analyzer'] = {
+--       diagnostics = {
+--         enable = false;
+--       }
+--     }
+--   }
+-- }
+
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 -- vim.o.updatetime = 250
