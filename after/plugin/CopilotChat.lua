@@ -7,7 +7,7 @@ copilot.setup({
 })
 local copilotchat = require("CopilotChat")
 copilotchat.setup({
-    debug = true,
+    debug = false,
 })
 
 vim.keymap.set('i', '<Tab>', function()
