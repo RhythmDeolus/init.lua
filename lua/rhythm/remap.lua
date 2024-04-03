@@ -32,25 +32,4 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/ <CR>");
 
-function SwitchToTerm()
-  local term_bufs = vim.fn.getbufinfo({buflisted = true})
-  local curr_buf = vim.fn.bufnr('%')
-  local filtered_bufs = {}
-  
-  for _, buf in ipairs(term_bufs) do
-    if buf.name:match("^term") and buf.bufnr ~= curr_buf then
-      table.insert(filtered_bufs, {nr = buf.bufnr, lu = buf.lastused})
-    end
-  end
-
-  if vim.fn.bufname('%'):match("^term") then
-    table.sort(filtered_bufs, function(b1, b2) return b1.lu < b2.lu end)
-  else
-    table.sort(filtered_bufs, function(b1, b2) return b1.lu > b2.lu end)
-  end
-
-  vim.cmd("buffer " .. filtered_bufs[1].nr)
-end
-
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua SwitchToTerm()<CR>', {silent = true})
 
