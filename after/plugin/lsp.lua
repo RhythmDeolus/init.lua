@@ -17,11 +17,19 @@ require('lspconfig').anakin_language_server.setup({ cmd = {'anakinls'}})
 require('lspconfig').tsserver.setup({})
 require('lspconfig').ccls.setup({})
 
+local handle = io.popen(" npm list -g | head -n 1 | awk '{ print $1 \"/node_modules/typescript/lib\" }'")
+local result = handle:read("*a")
+result = string.gsub(result, "%s+", "")
+handle:close()
+
+-- print(result)
+
 require('lspconfig').volar.setup({
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   init_options = {
     typescript = {
-      tsdk = '/home/rhythm/.config/nvm/versions/node/v20.10.0/lib/node_modules/typescript/lib'
+      tsdk = result
+      -- tsdk = '/home/rhythm/.config/nvm/versions/node/v20.10.0/lib/node_modules/typescript/lib'
       -- Alternative location if installed as root:
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
     }
