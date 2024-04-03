@@ -1,5 +1,3 @@
-require("rhythm")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -83,3 +81,5 @@ require("lazy").setup({
      {'numToStr/Comment.nvim'},
      {'rmagatti/auto-session'},
 })
+
+require("rhythm")
