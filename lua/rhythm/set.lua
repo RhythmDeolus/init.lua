@@ -34,9 +34,9 @@ vim.opt.foldcolumn = '1'
 
 vim.g.mapleader = " "
 
--- colorscheme setting
-require('gruvbox').setup({
-    contrast = 'hard',
-})
-vim.cmd [[colorscheme gruvbox]]
--- vim.cmd [[highlight FoldColumn guibg=monokai]]
+--ufo setting
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
