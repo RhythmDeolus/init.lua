@@ -45,7 +45,11 @@ return {
     {
         'mrcjkb/rustaceanvim',
         version = '^4', -- Recommended
-        ft = { 'rust' },
+        lazy = false,
+        init = function()
+          -- Configure rustaceanvim here
+          vim.g.rustaceanvim = {}
+        end,
     },
     {
         'numToStr/Comment.nvim',
