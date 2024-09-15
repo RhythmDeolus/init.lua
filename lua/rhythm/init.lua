@@ -7,8 +7,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
         if vim.fn.argc() == 0
         then
             vim.cmd("e .")
+            require("persistence").load()
         end
-        require("persistence").load()
     end,
     nested = true
 })

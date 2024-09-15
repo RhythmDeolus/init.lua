@@ -33,12 +33,13 @@ return {
             require('lspconfig').anakin_language_server.setup({ cmd = {'anakinls'}})
             require('lspconfig').tsserver.setup({})
             require('lspconfig').ccls.setup({})
+            
 
             require('lspconfig').volar.setup({
                 filetypes = { 'vue', 'json'},
                 init_options = {
                     typescript = {
-                        tsdk = '/home/rhythm/.config/nvm/versions/node/v20.10.0/lib/node_modules/typescript/lib'
+                        tsdk = require('lspconfig').tsserver.cmd[1]
                         -- Alternative location if installed as root:
                         -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
                     }
